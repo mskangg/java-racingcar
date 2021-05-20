@@ -9,8 +9,8 @@ public class Car {
         this.distance = new Distance();
     }
 
-    public void move(Accelerator accelerator) {
-        if (accelerator.isDriving()) {
+    public void move(MoveStrategy moveStrategy) {
+        if (moveStrategy.movable()) {
             distance.increaseDistance();
         }
     }

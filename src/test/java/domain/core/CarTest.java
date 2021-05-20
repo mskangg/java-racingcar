@@ -10,7 +10,7 @@ public class CarTest {
 
     @Test
     @DisplayName("AccelPower 가 5일 때 전진")
-    void move() {
+    void when_accel_power_5() {
         //given
         Car car = new Car(new CarName(""));
         Accelerator accelPower = new Accelerator(5);
@@ -61,5 +61,18 @@ public class CarTest {
 
         //then
         assertEquals(distance, car.getDistance());
+    }
+
+    @Test
+    @DisplayName("Car 가 전진할 때 출력 값이 같은지")
+    void move() {
+        //given
+        Car car = new Car(new CarName(""));
+
+        //when
+        car.move(() -> true);
+
+        //then
+        assertEquals(DISTANCE_PRINT, car.getDistancePrintMessage());
     }
 }
